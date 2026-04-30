@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GHALI AUTO — Véhicules Premium au Bardo</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.3/cdn.min.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/png" href="assets/images/logoghaliauto.png" />
+</head>
+<body>
+
+<!-- ══════════════ NAV ══════════════ -->
+<nav id="navbar">
+  <a class="nav-logo" href="#"><img src="assets/images/logoghaliauto.png" alt="Ghali Auto"></a>
+  <ul class="nav-links">
+    <li><a href="#hero">Accueil</a></li>
+    <li><a href="#inventory">Inventaire</a></li>
+    <li><a href="#about">À Propos</a></li>
+    <li><a href="#footer">Contact</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a href="#hero" onclick="closeMobile()">Accueil</a></li>
+    <li><a href="#inventory" onclick="closeMobile()">Inventaire</a></li>
+    <li><a href="#about" onclick="closeMobile()">À Propos</a></li>
+    <li><a href="#footer" onclick="closeMobile()">Contact</a></li>
+  </ul>
+</div>
+
+<!-- ══════════════ HERO ══════════════ -->
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Ghali Auto — Le Bardo, Tunisie</p>
+    <h1 class="hero-title"><em>Ghali </em><em>Auto</em><br>Véhicules Premium. Service Professionnel.</h1>
+    <p class="hero-sub">Découvrez notre sélection de voitures d'occasion de haute qualité. Des prix transparents, une qualité sans compromis.</p>
+    <a href="#inventory" class="btn-primary">Voir l'Inventaire</a>
+  </div>
+  <div class="scroll-hint">
+    <span>Défiler</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ══════════════ FILTER BAR ══════════════ -->
+<div class="filter-bar" id="filter-bar">
+  <div class="filter-inner">
+    <select aria-label="Brand">
+      <option value="">Toutes les Marques</option>
+      <option>BMW</option>
+      <option>Mercedes-Benz</option>
+      <option>Volkswagen</option>
+      <option>Audi</option>
+      <option>Peugeot</option>
+    </select>
+    <select aria-label="Year">
+      <option value="">Toutes les Années</option>
+      <option>2024</option><option>2023</option><option>2022</option>
+      <option>2021</option><option>2020</option><option>2019</option>
+    </select>
+    <select aria-label="Fuel Type">
+      <option value="">Énergie</option>
+      <option>Essence</option>
+      <option>Diesel</option>
+      <option>Hybride</option>
+      <option>Électrique</option>
+    </select>
+    <select aria-label="Max Price">
+      <option value="">Prix Max</option>
+      <option>30,000 TND</option>
+      <option>50,000 TND</option>
+      <option>80,000 TND</option>
+      <option>120,000 TND</option>
+      <option>200,000 TND</option>
+    </select>
+    <button class="btn-search">Rechercher</button>
+    <button class="btn-advanced" onclick="openSearchModal()">Avancé</button>
+  </div>
+</div>
+
+<!-- ══════════════ BRAND SEARCH ══════════════ -->
+<section class="brand-search-section">
+  <div class="brand-search-inner">
+    <h2 class="section-title">RECHERCHE PAR MARQUE</h2>
+    <div class="brand-grid" id="brandGrid">
+      <a href="#inventory" class="brand-item"><img src="assets/icons/alfa-romeo.png" alt="Alfa Romeo"></a>
+      <a href="#inventory" class="brand-item"><img src="assets/icons/audi.png" alt="Audi"></a>
+      <a href="#inventory" class="brand-item"><img src="assets/icons/bmw.png" alt="BMW"></a>
+      <a href="#inventory" class="brand-item"><img src="assets/icons/byd.png" alt="BYD"></a>
+      <a href="#inventory" class="brand-item"><img src="assets/icons/chery.png" alt="Chery"></a>
+      <a href="#inventory" class="brand-item"><img src="assets/icons/citroen.png" alt="Citroën"></a>
+      <a href="#inventory" class="brand-item"><img src="assets/icons/fiat.png" alt="Fiat"></a>
+      <a href="#inventory" class="brand-item"><img src="assets/icons/honda.png" alt="Honda"></a>
+      <a href="#inventory" class="brand-item"><img src="assets/icons/hyundai.png" alt="Hyundai"></a>
+      <a href="#inventory" class="brand-item"><img src="assets/icons/jeep.png" alt="Jeep"></a>
+      <a href="#inventory" class="brand-item"><img src="assets/icons/kia.png" alt="Kia"></a>
+      <a href="#inventory" class="brand-item"><img src="assets/icons/land-rover.png" alt="Land Rover"></a>
+      <a href="#inventory" class="brand-item"><img src="assets/icons/mercedes-benz.png" alt="Mercedes-Benz"></a>
+      <a href="#inventory" class="brand-item"><img src="assets/icons/mg.png" alt="MG"></a>
+      <a href="#inventory" class="brand-item"><img src="assets/icons/nissan.png" alt="Nissan"></a>
+      <a href="#inventory" class="brand-item"><img src="assets/icons/peugeot.png" alt="Peugeot"></a>
+      <a href="#inventory" class="brand-item"><img src="assets/icons/renault.png" alt="Renault"></a>
+      <a href="#inventory" class="brand-item"><img src="assets/icons/seat.png" alt="Seat"></a>
+      <a href="#inventory" class="brand-item"><img src="assets/icons/suzuki.png" alt="Suzuki"></a>
+      <a href="#inventory" class="brand-item"><img src="assets/icons/toyota.png" alt="Toyota"></a>
+      <a href="#inventory" class="brand-item"><img src="assets/icons/volkswagen.png" alt="Volkswagen"></a>
+    </div>
+    <button class="btn-show-more" id="btnShowMoreBrands" onclick="toggleBrands()">VOIR PLUS</button>
+  </div>
+</section>
+
+<!-- ══════════════ INVENTORY ══════════════ -->
+<section class="inventory-section" id="inventory">
+  <div class="section-header">
+    <p class="section-eyebrow">Notre Collection</p>
+    <span class="accent-line"></span>
+    <h2 class="section-title">Véhicules en Vedette</h2>
+  </div>
+
+  <div class="car-grid">
+
+    <!-- Card 1: BMW M4 -->
+    <article class="car-card" onclick="openModal('bmw')">
+      <img class="car-card-img" src="assets/images/bmwm4.jpg" alt="BMW M4 Competition" loading="lazy" />
+      <div class="card-badge">En Vedette</div>
+      <div class="car-card-body">
+        <h3 class="car-title">BMW M4 Competition</h3>
+        <div class="card-specs-grid">
+          <span class="spec-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12 M12 8V2 M4 22L8 2 M20 22L16 2"/></svg>
+            85 000 km
+          </span>
+          <span class="spec-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+            2021
+          </span>
+          <span class="spec-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="5" r="2"/><circle cx="17" cy="5" r="2"/><circle cx="7" cy="19" r="2"/><circle cx="17" cy="19" r="2"/><path d="M7 7v10"/><path d="M17 7v10"/><path d="M7 12h10"/></svg>
+            Automatique
+          </span>
+          <span class="spec-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="6" height="12" rx="1"/><rect x="16" y="6" width="6" height="12" rx="1"/><path d="M8 12h8"/><circle cx="12" cy="12" r="2"/></svg>
+            Propulsion
+          </span>
+          <span class="spec-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v4"/><path d="M6 10V8"/><path d="M18 10V8"/></svg>
+            30 cv
+          </span>
+          <span class="spec-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 22v-8c0-1.1.9-2 2-2h4a2 2 0 0 1 2 2v8"/><path d="M3 22h8"/><path d="M11 12h5a2 2 0 0 1 2 2v2"/><path d="M18 12v-2a3 3 0 0 0-6-3h-1"/><path d="M3 14h8"/></svg>
+            Essence
+          </span>
+        </div>
+        <div class="car-price-row">
+          <div class="car-price">230,500 <span>TND</span></div>
+          <button class="btn-details" onclick="event.stopPropagation(); openModal('bmw')">Voir les Détails</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- Card 2: Mercedes C-Class -->
+    <article class="car-card" onclick="openModal('mercedes')">
+      <img class="car-card-img" src="assets/images/c300.jpg" alt="Mercedes C-Class" loading="lazy" />
+      <div class="car-card-body">
+        <h3 class="car-title">Mercedes-Benz C 300 AMG</h3>
+        <div class="card-specs-grid">
+          <span class="spec-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12 M12 8V2 M4 22L8 2 M20 22L16 2"/></svg>
+            62 000 km
+          </span>
+          <span class="spec-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+            2022
+          </span>
+          <span class="spec-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="5" r="2"/><circle cx="17" cy="5" r="2"/><circle cx="7" cy="19" r="2"/><circle cx="17" cy="19" r="2"/><path d="M7 7v10"/><path d="M17 7v10"/><path d="M7 12h10"/></svg>
+            Automatique
+          </span>
+          <span class="spec-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="6" height="12" rx="1"/><rect x="16" y="6" width="6" height="12" rx="1"/><path d="M8 12h8"/><circle cx="12" cy="12" r="2"/></svg>
+            Traction
+          </span>
+          <span class="spec-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v4"/><path d="M6 10V8"/><path d="M18 10V8"/></svg>
+            22 cv
+          </span>
+          <span class="spec-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 22v-8c0-1.1.9-2 2-2h4a2 2 0 0 1 2 2v8"/><path d="M3 22h8"/><path d="M11 12h5a2 2 0 0 1 2 2v2"/><path d="M18 12v-2a3 3 0 0 0-6-3h-1"/><path d="M3 14h8"/></svg>
+            Essence
+          </span>
+        </div>
+        <div class="car-price-row">
+          <div class="car-price">200,000 <span>TND</span></div>
+          <button class="btn-details" onclick="event.stopPropagation(); openModal('mercedes')">Voir les Détails</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- Card 3: VW Golf -->
+    <article class="car-card" onclick="openModal('golf')">
+      <img class="car-card-img" src="assets/images/golf8.jpg" alt="Volkswagen Golf GTI" loading="lazy" />
+      <div class="car-card-body">
+        <h3 class="car-title">Volkswagen Golf GTI 8</h3>
+        <div class="card-specs-grid">
+          <span class="spec-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12 M12 8V2 M4 22L8 2 M20 22L16 2"/></svg>
+            38 500 km
+          </span>
+          <span class="spec-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+            2023
+          </span>
+          <span class="spec-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="5" r="2"/><circle cx="17" cy="5" r="2"/><circle cx="7" cy="19" r="2"/><circle cx="17" cy="19" r="2"/><path d="M7 7v10"/><path d="M17 7v10"/><path d="M7 12h10"/></svg>
+            DSG 7
+          </span>
+          <span class="spec-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="6" height="12" rx="1"/><rect x="16" y="6" width="6" height="12" rx="1"/><path d="M8 12h8"/><circle cx="12" cy="12" r="2"/></svg>
+            Traction
+          </span>
+          <span class="spec-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v4"/><path d="M6 10V8"/><path d="M18 10V8"/></svg>
+            14 cv
+          </span>
+          <span class="spec-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 22v-8c0-1.1.9-2 2-2h4a2 2 0 0 1 2 2v8"/><path d="M3 22h8"/><path d="M11 12h5a2 2 0 0 1 2 2v2"/><path d="M18 12v-2a3 3 0 0 0-6-3h-1"/><path d="M3 14h8"/></svg>
+            Essence
+          </span>
+        </div>
+        <div class="car-price-row">
+          <div class="car-price">100,900 <span>TND</span></div>
+          <button class="btn-details" onclick="event.stopPropagation(); openModal('golf')">Voir les Détails</button>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ══════════════ ABOUT ══════════════ -->
+<section id="about" style="padding: 4rem 2rem; background: var(--charcoal-mid); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+  <div style="max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center;">
+    <div>
+      <p class="section-eyebrow">Qui Sommes-Nous</p>
+      <span class="accent-line"></span>
+      <h2 class="section-title" style="margin-bottom: 1.25rem;">Votre Partenaire Auto de Confiance<br>au Bardo</h2>
+      <p style="color: var(--white-dim); font-size: 0.9rem; line-height: 1.8; font-weight: 300; max-width: 580px; margin-bottom: 1rem;">
+        Chez Ghali Auto, nous croyons que l'achat d'une voiture doit être une expérience aussi premium que le véhicule lui-même. Basés au Bardo, nous sommes spécialisés dans les véhicules d'occasion rigoureusement sélectionnés et inspectés, issus des marques les plus respectées au monde.
+      </p>
+      <p style="color: var(--white-dim); font-size: 0.9rem; line-height: 1.8; font-weight: 300; max-width: 580px;">
+        Chaque voiture de notre showroom a subi une inspection multipoint rigoureuse. Notre équipe s'engage à vous offrir des conseils transparents et sans pression — pour vous aider à trouver exactement le véhicule idéal au juste prix.
+      </p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;">
+      <div style="background: var(--card-bg); border: 1px solid var(--border); padding: 1.5rem; text-align: center;">
+        <div style="font-family: 'Rajdhani', sans-serif; font-size: 2.2rem; font-weight: 700; color: var(--red); margin-bottom: 0.25rem;">150+</div>
+        <div style="font-size: 0.78rem; color: var(--white-dim); text-transform: uppercase; letter-spacing: 0.1em; font-family: 'Rajdhani', sans-serif;">Voitures Vendues</div>
+      </div>
+      <div style="background: var(--card-bg); border: 1px solid var(--border); padding: 1.5rem; text-align: center;">
+        <div style="font-family: 'Rajdhani', sans-serif; font-size: 2.2rem; font-weight: 700; color: var(--red); margin-bottom: 0.25rem;">8+</div>
+        <div style="font-size: 0.78rem; color: var(--white-dim); text-transform: uppercase; letter-spacing: 0.1em; font-family: 'Rajdhani', sans-serif;">Années d'Expérience</div>
+      </div>
+      <div style="background: var(--card-bg); border: 1px solid var(--border); padding: 1.5rem; text-align: center;">
+        <div style="font-family: 'Rajdhani', sans-serif; font-size: 2.2rem; font-weight: 700; color: var(--red); margin-bottom: 0.25rem;">100%</div>
+        <div style="font-size: 0.78rem; color: var(--white-dim); text-transform: uppercase; letter-spacing: 0.1em; font-family: 'Rajdhani', sans-serif;">Inspectés</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ MODAL ══════════════ -->
+<div class="modal-overlay" id="modal" role="dialog" aria-modal="true">
+  <div class="modal-inner">
+    <button class="modal-back" onclick="closeModal()">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+      Retour à l'Inventaire
+    </button>
+
+    <!-- Gallery -->
+    <div class="modal-gallery">
+      <img class="gallery-main" id="galleryMain" src="" alt="Car main image" />
+      <div class="gallery-thumbs" id="galleryThumbs"></div>
+    </div>
+
+    <!-- Body -->
+    <div class="modal-body">
+      <div>
+        <div class="modal-title-area">
+          <p class="modal-brand" id="modalBrand"></p>
+          <h2 class="modal-car-name" id="modalName"></h2>
+          <div class="modal-price" id="modalPrice"></div>
+        </div>
+
+        <div class="specs-grid" id="modalSpecs"></div>
+
+        <p class="car-desc" id="modalDesc"></p>
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="modal-sidebar">
+        <div class="sidebar-card">
+          <p class="sidebar-title">Intéressé par ce véhicule?</p>
+          <p class="sidebar-text">Contactez-nous via WhatsApp ou téléphone pour toute question, essai ou réservation.</p>
+          <a class="btn-whatsapp" href="https://wa.me/21622528236" target="_blank" rel="noopener">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Contactez-nous sur WhatsApp
+          </a>
+          <a class="btn-phone" href="tel:+21622528236">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.63a19.79 19.79 0 01-3.07-8.68A2 2 0 012 0h3a2 2 0 012 1.72c.127 1.015.361 2.01.7 2.97a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.96.339 1.955.573 2.97.7a2 2 0 011.72 2.02z"/></svg>
+            22 528 236
+          </a>
+          <hr class="sidebar-divider"/>
+          <div class="sidebar-info">
+            <strong>Ghali Auto</strong><br>
+            Rue 2 Mares, Le Bardo<br>
+            Tunis, Tunisie 1212<br><br>
+            Lun–Sam: 9h00 – 18h00
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ SEARCH MODAL ══════════════ -->
+<div class="search-modal-overlay" id="searchModal" role="dialog" aria-modal="true">
+  <div class="search-modal-inner">
+    <button class="search-modal-close" onclick="closeSearchModal()">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    
+    <div class="search-modal-content">
+      <!-- Top Row -->
+      <div class="sm-grid sm-grid-2">
+        <select class="sm-select"><option>Marque</option></select>
+        <select class="sm-select"><option>Modèle</option></select>
+      </div>
+
+      <!-- Carrosserie -->
+      <div class="sm-section">
+        <h4 class="sm-label">CARROSSERIE :</h4>
+        <div class="sm-carrosserie-grid">
+          <label class="sm-car-item">
+            <input type="radio" name="carrosserie" value="citadine">
+            <div class="sm-car-body">
+              <div class="sm-car-icon" style="background-image: url('assets/icons/19.svg')"></div>
+              <span>CITADINE</span>
+            </div>
+          </label>
+          <label class="sm-car-item">
+            <input type="radio" name="carrosserie" value="compacte">
+            <div class="sm-car-body">
+              <div class="sm-car-icon" style="background-image: url('assets/icons/39.svg')"></div>
+              <span>COMPACTE</span>
+            </div>
+          </label>
+          <label class="sm-car-item">
+            <input type="radio" name="carrosserie" value="berline">
+            <div class="sm-car-body">
+              <div class="sm-car-icon" style="background-image: url('assets/icons/2.svg')"></div>
+              <span>BERLINE</span>
+            </div>
+          </label>
+          <label class="sm-car-item">
+            <input type="radio" name="carrosserie" value="suv">
+            <div class="sm-car-body">
+              <div class="sm-car-icon" style="background-image: url('assets/icons/5.svg')"></div>
+              <span>SUV</span>
+            </div>
+          </label>
+          <label class="sm-car-item">
+            <input type="radio" name="carrosserie" value="coupe">
+            <div class="sm-car-body">
+              <div class="sm-car-icon" style="background-image: url('assets/icons/3.svg')"></div>
+              <span>COUPÉ</span>
+            </div>
+          </label>
+          <label class="sm-car-item">
+            <input type="radio" name="carrosserie" value="monospace">
+            <div class="sm-car-body">
+              <div class="sm-car-icon" style="background-image: url('assets/icons/8.svg')"></div>
+              <span>MONOSPACE</span>
+            </div>
+          </label>
+          <label class="sm-car-item">
+            <input type="radio" name="carrosserie" value="utilitaire">
+            <div class="sm-car-body">
+              <div class="sm-car-icon" style="background-image: url('assets/icons/4.svg')"></div>
+              <span>UTILITAIRE</span>
+            </div>
+          </label>
+          <label class="sm-car-item">
+            <input type="radio" name="carrosserie" value="pickup">
+            <div class="sm-car-body">
+              <div class="sm-car-icon" style="background-image: url('assets/icons/6.svg')"></div>
+              <span>PICK UP</span>
+            </div>
+          </label>
+          <label class="sm-car-item">
+            <input type="radio" name="carrosserie" value="cabriolet">
+            <div class="sm-car-body">
+              <div class="sm-car-icon" style="background-image: url('assets/icons/20.svg')"></div>
+              <span>CABRIOLET</span>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <!-- Filters Grid -->
+      <div class="sm-grid sm-grid-4">
+        <select class="sm-select"><option>Nombre de places</option></select>
+        <select class="sm-select"><option>Nombre de portes</option></select>
+        <select class="sm-select"><option>Nombre de cylindres</option></select>
+        
+        <select class="sm-select"><option>Énergie</option></select>
+        <select class="sm-select"><option>Puissance fiscale</option></select>
+        <select class="sm-select"><option>Boîte</option></select>
+        <select class="sm-select"><option>Nombre de rapports</option></select>
+        
+        <select class="sm-select"><option>Transmission</option></select>
+      </div>
+
+      <!-- Prix -->
+      <div class="sm-section" style="margin-top: 2rem;">
+        <h4 class="sm-label">PRIX :</h4>
+        <div class="sm-price-text">DE <span id="smPriceMin">0</span> À <span id="smPriceMax">1 000 000</span> DT</div>
+        <div class="sm-slider-wrapper">
+          <input type="range" min="0" max="1000000" step="5000" value="1000000" class="sm-slider" id="smPriceSlider">
+        </div>
+      </div>
+
+      <!-- Action -->
+      <div class="sm-actions">
+        <button class="sm-btn-submit" onclick="closeSearchModal()">LANCER LA RECHERCHE</button>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ FOOTER ══════════════ -->
+<footer id="footer">
+  <div class="footer-inner">
+    <!-- Brand col -->
+    <div>
+      <div class="footer-logo"><img src="assets/images/logoghaliauto.png" alt="Ghali Auto"></div>
+      <p class="footer-about">Votre partenaire de confiance pour les véhicules d'occasion premium au Bardo. Transparence, véhicules inspectés et passion automobile depuis 2016.</p>
+      <div class="social-links" style="margin-top:1.25rem;">
+        <a class="social-link" href="#" aria-label="Facebook">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        </a>
+        <a class="social-link" href="#" aria-label="Instagram">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a class="social-link" href="https://wa.me/21622528236" aria-label="WhatsApp">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-col">
+      <p class="footer-col-title">Navigation</p>
+      <ul>
+        <li><a href="#hero">Accueil</a></li>
+        <li><a href="#inventory">Inventaire</a></li>
+        <li><a href="#about">À Propos</a></li>
+        <li><a href="#footer">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Brands -->
+    <div class="footer-col">
+      <p class="footer-col-title">Marques</p>
+      <ul>
+        <li><a href="#">BMW</a></li>
+        <li><a href="#">Mercedes-Benz</a></li>
+        <li><a href="#">Volkswagen</a></li>
+        <li><a href="#">Audi</a></li>
+        <li><a href="#">Peugeot</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact -->
+    <div class="footer-col">
+      <p class="footer-col-title">Contact</p>
+      <ul class="footer-contact" style="list-style:none;">
+        <li>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Rue 2 Mares, Le Bardo<br>Tunis, Tunisie 1212
+        </li>
+        <li style="margin-top:0.75rem;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.63a19.79 19.79 0 01-3.07-8.68A2 2 0 012 0h3a2 2 0 012 1.72c.127 1.015.361 2.01.7 2.97a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.96.339 1.955.573 2.97.7a2 2 0 011.72 2.02z"/></svg>
+          22 528 236
+        </li>
+        <li style="margin-top:0.75rem;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          contact@ghaliauto.tn
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2024 Ghali Auto. Tous droits réservés.</span>
+    <span class="footer-credit">Le Bardo, Tunis, Tunisie</span>
+  </div>
+</footer>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>
