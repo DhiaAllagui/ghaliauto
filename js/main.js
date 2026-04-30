@@ -3,7 +3,7 @@
     bmw: {
       brand: 'BMW',
       name: 'M4 Competition',
-      price: '98,500 TND',
+      price: '230,500 TND',
       images: [
         'assets/images/bmwm4.jpg',
         'https://images.unsplash.com/photo-1556189250-72ba954cfc2b?w=600&q=80',
@@ -23,7 +23,7 @@
     mercedes: {
       brand: 'Mercedes-Benz',
       name: 'C 300 AMG Line',
-      price: '75,000 TND',
+      price: '200,000 TND',
       images: [
         'assets/images/c300.jpg',
         'https://images.unsplash.com/photo-1590362891991-f776e747a588?w=600&q=80',
@@ -43,7 +43,7 @@
     golf: {
       brand: 'Volkswagen',
       name: 'Golf GTI 8',
-      price: '42,900 TND',
+      price: '100,900 TND',
       images: [
         'assets/images/golf8.jpg',
         'https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=600&q=80',
